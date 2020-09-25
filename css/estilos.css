@@ -4,7 +4,6 @@ declaraciones
 propiedades
 valores */
 
-
 /* seletor de etiqueta  header - section - article - nav */
 /* header {
   background: pink;
@@ -21,8 +20,6 @@ valores */
 /* selector de id # */
 /* #portafolio */
 
-
-
 /* gris oscuro = #1d252c */
 /* gris claro = #626262 */
 /* background gris = #1b2127 */
@@ -33,12 +30,12 @@ body {
   margin: 0;
 }
 
-h1, 
+h1,
 h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
   font-family: 'Fjalla One', sans-serif;
   font-weight: normal;
   /* font-style: italic; */
@@ -47,7 +44,7 @@ h6{
 h1 {
   font-size: 40px;
   line-height: 1.5;
-  letter-spacing: -.2px;
+  letter-spacing: -0.2px;
   color: white;
   margin: 0;
   /* margin: 100px 150px 70px 30px; */
@@ -76,13 +73,13 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  flex-wrap: wrap;
 }
 
-.hero-image{
+.hero-image {
   object-fit: cover;
+  flex
 }
-
 
 .portfolio {
   background: #fafafa;
@@ -115,6 +112,8 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+
 }
 .project-course,
 .project-date,
@@ -137,13 +136,12 @@ h2 {
   margin-bottom: 10px;
 }
 
-
 .project-details {
-  width: 500px;
+  width: 50%;
 }
 
 .project-imageContainer {
-  width: 500px;
+  width: 50%;
 }
 
 .header {
@@ -153,6 +151,7 @@ h2 {
   height: 70px;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 ol,
@@ -209,6 +208,7 @@ figure {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .footer img {
@@ -226,9 +226,9 @@ figure {
 .event-list-title {
   margin-left: 20px;
 }
-.event { 
-  margin: 10px;
-  width: 480px;
+.event {
+  margin: 1%;
+  width: 48%;
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
@@ -266,10 +266,9 @@ figure {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.social {
-}
 
 .social-link {
   display: inline-block;
@@ -291,7 +290,6 @@ figure {
 .social-link.instagram {
   background-image: url('../images/instagram.svg');
 }
-
 
 .form-email input {
   border-color: gray;
@@ -315,17 +313,112 @@ figure {
   margin-top: 10px;
 }
 
-.form-email h3 { 
+.form-email h3 {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container {
   /* border: 1px solid red; */
-  width: 1000px;
+  max-width: 1000px;
+ /*  width: 100%;  */
+  flex: 1;
   margin: 0 auto;
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
   height: inherit;
   flex-wrap: inherit;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 1em ;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    display: block;
+    height:auto;
+  }
+  .header ol {
+    display:block;
+  }
+  .header ol li {
+    height:50px;
+  }
+ .header a {
+  justify-content: center;
+ }
+  .header .logo {
+    text-align: center;
+  }
+
+ .project {
+  display: block;
+ }
+ .project-imageContainer {
+  width:auto;
+  text-align: center;
+ }
+ .project-imageContainer img {
+  max-width:100%;
+ }
+ .project-details {
+  width:auto;
+ /*  font-size:10px; */
+ }
+ .project-course, .project-date, .project-url{
+   margin:.3em 0;
+ }
+ .project-title{
+ font-size: 1.5em;
+ margin-bottom: .3em;
+ }
+ .project-url{
+  font-size: 1em;
+ }
+ .project-course {
+  font-size: .7em;
+ }
+ .project-description{
+  font-size: .8em;
+ }
+ .event {
+   width: auto;
+   flex-shrink: initial;
+ }
+ .event img {
+   width: 100%;
+ }
+
+}
+@media screen and (max-width: 480px) {
+  .project-details {
+    width:auto;
+    font-size:12px;
+  }
+   
+  .event-detail {
+    margin:-2em .5em .5em;
+    padding: 1em;
+  }
+  .contact {
+    height: auto;
+    padding: 1em 0;
+    text-align: center;
+    display: block;
+  }
+  .form-email button {
+    margin: 1em auto;
+  }
+  .form-email h3 {
+    margin-top: 0;
+  }
+  .footer {
+    display: block;
+    text-align: center;
+    border:1px solid transparent;
+}
+@media screen and (max-width: 320px) {
 }
